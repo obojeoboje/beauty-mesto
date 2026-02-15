@@ -1,0 +1,630 @@
+/* ==========================================================================
+   Бьюти Место — Студия красоты
+   Общие стили лендинга
+   ========================================================================== */
+
+/* ---------- CSS Custom Properties (палитра бренда) ---------- */
+:root {
+  /* Основные */
+  --color-primary: #EEBDC2;       /* нежно-розовый */
+  --color-text: #473D3C;          /* тёмно-коричневый */
+  --color-accent: #C4727F;        /* глубокий розовый (акцент) */
+
+  /* Дополнительные */
+  --color-beige: #E0CCBE;
+  --color-peach: #F0D7CF;
+  --color-light-pink: #F6DADA;
+
+  /* Фоны */
+  --bg-gradient-start: #F6DADA;
+  --bg-gradient-end: #F0D7CF;
+  --bg-card: #ffffff;
+
+  /* Шрифты */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Montserrat', 'Segoe UI', sans-serif;
+
+  /* Размеры */
+  --container-max: 480px;
+  --radius-btn: 16px;
+  --radius-card: 20px;
+  --transition: 0.3s ease;
+}
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: linear-gradient(170deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ---------- Container (карточка контента) ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-card);
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* ---------- Типографика ---------- */
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 32px;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.section-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-accent);
+  margin: 10px auto 0;
+  border-radius: 1px;
+}
+
+/* ---------- Секции ---------- */
+.section {
+  margin-bottom: 32px;
+}
+
+.section + .section {
+  padding-top: 8px;
+}
+
+/* ---------- Кнопки ---------- */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 18px 24px;
+  background: var(--color-beige);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(196, 114, 127, 0.35);
+  outline: none;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(196, 114, 127, 0.25);
+}
+
+.btn + .btn {
+  margin-top: 12px;
+}
+
+/* Вариант CTA (акцентная кнопка) */
+.btn--cta {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn--cta:hover,
+.btn--cta:focus-visible {
+  background: #B85B6A;
+  box-shadow: 0 6px 24px rgba(184, 91, 106, 0.4);
+}
+
+/* ---------- Социальные сети ---------- */
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: calc(50% - 8px);
+  padding: 14px 20px;
+  background: var(--color-beige);
+  border-radius: var(--radius-btn);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text);
+  transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.social__link:hover,
+.social__link:focus-visible {
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(196, 114, 127, 0.35);
+}
+
+.social__link:hover svg,
+.social__link:focus-visible svg {
+  fill: #fff;
+}
+
+.social__icon {
+  width: 22px;
+  height: 22px;
+  fill: var(--color-text);
+  flex-shrink: 0;
+  transition: fill var(--transition);
+}
+
+/* ---------- Блок адреса ---------- */
+.address {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.address__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.address__text {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  opacity: 0.8;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.address__video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  max-height: 480px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--color-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.address__video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.address__video-placeholder {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  opacity: 0.5;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ---------- Портфолио / Страницы услуг ---------- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  transition: opacity var(--transition);
+}
+
+.back-link:hover {
+  opacity: 0.7;
+}
+
+.back-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Вступительный текст мастера */
+.master-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 32px;
+  opacity: 0.85;
+}
+
+/* Карточка услуги */
+.service-card {
+  background: #fff;
+  border-radius: var(--radius-card);
+  padding: 24px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(71, 61, 60, 0.06);
+}
+
+.service-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+
+/* Карусель фото (scroll-snap) */
+.service-card__carousel {
+  position: relative;
+}
+
+.service-card__gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 0px;
+  margin-bottom: 12px;
+  scrollbar-width: none;          /* Firefox */
+}
+
+.service-card__gallery::-webkit-scrollbar {
+  display: none;                  /* Chrome / Safari */
+}
+
+.service-card__photo {
+  flex: 0 0 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--color-light-pink);
+  scroll-snap-align: start;
+}
+
+.service-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Стрелки карусели */
+.carousel-arrow {
+  display: none;               /* скрыты на мобильном */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-text);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(71, 61, 60, 0.12);
+  transition: background var(--transition), transform 0.15s ease;
+  z-index: 2;
+  padding: 0;
+}
+
+.carousel-arrow:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-arrow--prev {
+  left: 8px;
+}
+
+.carousel-arrow--next {
+  right: 8px;
+}
+
+.carousel-arrow svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  margin: auto;
+}
+
+/* Индикатор-точки под каруселью */
+.service-card__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.service-card__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-beige);
+  transition: background var(--transition);
+}
+
+.service-card__dot--active {
+  background: var(--color-accent);
+}
+
+.service-card__price {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.service-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--color-text);
+  opacity: 0.75;
+}
+
+/* Промо-блок (цитата / продающий текст) */
+.promo-block {
+  text-align: center;
+  padding: 24px 8px;
+  margin-bottom: 20px;
+}
+
+.promo-block__text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.promo-block__text em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* Список преимуществ */
+.benefits {
+  margin-bottom: 28px;
+}
+
+.benefits__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.benefits__item + .benefits__item {
+  border-top: 1px solid rgba(224, 204, 190, 0.4);
+}
+
+.benefits__icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  margin-top: 2px;
+}
+
+.benefits__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.benefits__text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+/* CTA-секция (кнопка записи, повторяется на странице) */
+.cta-section {
+  margin: 28px 0;
+}
+
+/* Старая галерея (для обратной совместимости) */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.gallery__item {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-beige);
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Категория услуг (заголовок группы) */
+.category-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 20px;
+  margin-top: 8px;
+}
+
+.category-title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* Горизонтальный ряд карточек (для нескольких услуг в ряд) */
+.services-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* CTA внизу */
+.cta-fixed {
+  margin-top: 8px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--color-text);
+  opacity: 0.5;
+}
+
+/* ---------- Декоративный разделитель ---------- */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-accent);
+  margin: 0 auto 32px;
+  opacity: 0.4;
+}
+
+/* ==========================================================================
+   Адаптивность (mobile-first)
+   ========================================================================== */
+
+/* Планшет / маленький десктоп */
+@media (min-width: 768px) {
+  .container {
+    padding: 48px 24px 56px;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .promo-block__text {
+    font-size: 1.35rem;
+  }
+
+  .carousel-arrow {
+    display: flex;
+  }
+}
+
+/* Десктоп */
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background:
+      linear-gradient(170deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 50%, var(--color-primary) 100%);
+  }
+
+  .container {
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius-card);
+    box-shadow:
+      0 4px 40px rgba(71, 61, 60, 0.08),
+      0 1px 3px rgba(71, 61, 60, 0.04);
+    padding: 48px 36px 56px;
+  }
+
+  .title {
+    font-size: 2.6rem;
+  }
+}
