@@ -8,7 +8,7 @@
   /* Основные */
   --color-primary: #EEBDC2;       /* нежно-розовый */
   --color-text: #473D3C;          /* тёмно-коричневый */
-  --color-accent: #C4727F;        /* глубокий розовый (акцент) */
+  --color-accent: #B85B6A;        /* ягодный (акцент) */
 
   /* Дополнительные */
   --color-beige: #E0CCBE;
@@ -180,8 +180,8 @@ ul, ol {
 
 .btn--cta:hover,
 .btn--cta:focus-visible {
-  background: #B85B6A;
-  box-shadow: 0 6px 24px rgba(184, 91, 106, 0.4);
+  background: #A04D5C;
+  box-shadow: 0 6px 24px rgba(160, 77, 92, 0.4);
 }
 
 /* ---------- Социальные сети ---------- */
