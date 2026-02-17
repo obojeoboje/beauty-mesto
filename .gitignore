@@ -1,0 +1,15 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.*
+
+# Agent memory files
+PROJECT_MEMORY.md
+*_MEMORY.md
+memory/
