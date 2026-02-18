@@ -12,6 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!gallery) return;
 
+    const slides = gallery.querySelectorAll('.service-card__photo');
+    const isSingleSlide = slides.length <= 1;
+
+    if (isSingleSlide) {
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+      const dotsWrap = card ? card.querySelector('.service-card__dots') : null;
+      if (dotsWrap) dotsWrap.style.display = 'none';
+      gallery.style.overflowX = 'hidden';
+      return;
+    }
+
     const getSlideWidth = () => gallery.querySelector('.service-card__photo')?.offsetWidth || gallery.offsetWidth;
 
     // Обновить активную точку
