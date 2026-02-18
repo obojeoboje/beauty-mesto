@@ -265,10 +265,16 @@ ul, ol {
   justify-content: center;
 }
 
-.address__video iframe {
+.address__video iframe,
+.address__video video {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.address__video video {
+  object-fit: cover;
+  background: #000;
 }
 
 .address__video-placeholder {
