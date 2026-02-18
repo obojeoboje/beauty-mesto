@@ -636,48 +636,67 @@ ul, ol {
 }
 
 
-/* Telegram help block under CTA */
+/* Telegram help block under CTA (dark social-style) */
 .telegram-help {
-  margin-top: 12px;
-  display: flex;
+  margin-top: 14px;
+  background: linear-gradient(90deg, #171717 0%, #0f0f0f 52%, #080808 100%);
+  border-radius: 18px;
+  padding: 16px 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.telegram-help::after {
+  content: '↗';
+  position: absolute;
+  right: 72px;
+  bottom: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  transform: rotate(-8deg);
 }
 
 .telegram-help__text {
-  font-size: 0.9rem;
-  color: var(--color-text);
-  opacity: 0.82;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: #f5f5f5;
+  max-width: 290px;
 }
 
 .telegram-help__link {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(184, 91, 106, 0.1);
-  color: var(--color-accent);
-  transition: background var(--transition), transform var(--transition), color var(--transition);
+  justify-content: center;
+  background: #e8d2c2;
+  color: #171717;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  position: relative;
+  z-index: 1;
 }
 
 .telegram-help__link:hover,
 .telegram-help__link:focus-visible {
-  background: var(--color-accent);
-  color: #fff;
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.42);
+  background: #f2dfd1;
   outline: none;
 }
 
 .telegram-help__arrow {
-  font-size: 1rem;
-  line-height: 1;
+  display: none;
 }
 
 .telegram-help__icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   display: inline-flex;
 }
 
